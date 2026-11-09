@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640" role="img" aria-label="Главный экран сайта">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <path id="circle" d="M0 0 m -74 0 a 74 74 0 1 1 148 0 a 74 74 0 1 1 -148 0"/>
+  </defs>
+
+  <style>
+    .serif { font-family: Georgia, 'Times New Roman', serif; font-weight: bold; }
+    .mono  { font-family: 'Courier New', monospace; }
+    .sans  { font-family: Verdana, Arial, sans-serif; }
+  </style>
+
+  <rect width="800" height="640" fill="#e9dcc2"/>
+  <rect x="14" y="14" width="772" height="612" fill="#f1e7d3"/>
+  <rect x="14" y="14" width="772" height="612" fill="#f1e7d3" filter="url(#grain)" opacity="0.05"/>
+  <rect x="14" y="14" width="772" height="612" fill="none" stroke="#26180e" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- хедер -->
+  <g transform="translate(38,36) scale(0.75)" stroke="#bc3b1d" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M12 2.5v19M3.6 7.25l16.8 9.5M20.4 7.25L3.6 16.75"/>
+  </g>
+  <text x="66" y="52" class="serif" font-size="20" fill="#26180e">Хлебное Место</text>
+
+  <rect x="548" y="30" width="204" height="32" rx="16" fill="none" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <circle cx="568" cy="46" r="4.5" fill="#bc3b1d"/>
+  <text x="584" y="50" class="mono" font-size="11" letter-spacing="1" fill="#6a5645">ОТКРЫТО · ДО 21:00</text>
+
+  <!-- кикер -->
+  <line x1="40" y1="106" x2="760" y2="106" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <text x="40" y="132" class="mono" font-size="11" letter-spacing="3" fill="#6a5645">ПЕКАРНЯ — МОСКВА — ОСН. 1998</text>
+
+  <!-- заголовок -->
+  <text x="40" y="216" class="serif" font-size="62" fill="#26180e">Мука, вода,</text>
+  <text x="40" y="284" class="serif" font-size="62" fill="#26180e">соль <tspan font-style="italic" font-weight="normal" fill="#bc3b1d">и время.</tspan></text>
+
+  <text x="40" y="326" class="sans" font-size="13.5" fill="#6a5645">Замешиваем тесто в четыре утра, печём на дровах</text>
+  <text x="40" y="348" class="sans" font-size="13.5" fill="#6a5645">и не кладём ничего лишнего. Двадцать седьмой год.</text>
+
+  <!-- кнопки -->
+  <rect x="40" y="382" width="256" height="46" fill="#26180e"/>
+  <text x="168" y="410" class="mono" font-size="12" letter-spacing="2" fill="#f1e7d3" text-anchor="middle">СМОТРЕТЬ ПРЕЙСКУРАНТ →</text>
+
+  <rect x="312" y="382" width="214" height="46" fill="none" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <text x="419" y="410" class="mono" font-size="12" letter-spacing="2" fill="#26180e" text-anchor="middle">ОДНА НОЧНАЯ СМЕНА</text>
+
+  <!-- статистика -->
+  <line x1="40" y1="480" x2="40" y2="556" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <text x="56" y="512" class="serif" font-size="42" fill="#26180e">27</text>
+  <text x="56" y="540" class="mono" font-size="10" letter-spacing="2" fill="#6a5645">ЛЕТ У ПЕЧИ</text>
+
+  <line x1="290" y1="480" x2="290" y2="556" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <text x="306" y="512" class="serif" font-size="42" fill="#26180e">40</text>
+  <text x="306" y="540" class="mono" font-size="10" letter-spacing="2" fill="#6a5645">ПОЗИЦИЙ В ПРОДАЖЕ</text>
+
+  <line x1="540" y1="480" x2="540" y2="556" stroke="#26180e" stroke-width="1" opacity="0.4"/>
+  <text x="556" y="512" class="serif" font-size="42" fill="#26180e">04:00</text>
+  <text x="556" y="540" class="mono" font-size="10" letter-spacing="2" fill="#6a5645">НАЧАЛО СМЕНЫ</text>
+
+  <!-- печать -->
+  <g transform="translate(636,268)">
+    <circle r="100" fill="none" stroke="#26180e" stroke-width="1" opacity="0.35"/>
+    <text class="mono" font-size="12" letter-spacing="4" fill="#26180e">
+      <textPath href="#circle">СВЕЖИЙ ХЛЕБ · КАЖДОЕ УТРО · С 1998 ГОДА ·</textPath>
+    </text>
+    <g transform="scale(2.1) translate(-12,-12)" stroke="#bc3b1d" stroke-width="2.4" stroke-linecap="round" fill="none">
+      <path d="M12 2.5v19M3.6 7.25l16.8 9.5M20.4 7.25L3.6 16.75"/>
+    </g>
+  </g>
+
+  <text x="760" y="600" class="mono" font-size="11" letter-spacing="2" fill="#6a5645" text-anchor="end">дровяная печь · берёзовые дрова · 240°C</text>
+</svg>
