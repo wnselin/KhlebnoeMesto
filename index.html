@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хлебное Место — дровяная пекарня, осн. 1998</title>
+  <meta name="description" content="Пекарня, где тесто замешивают в четыре утра: хлеб, круассаны и медовик из дровяной печи. Мука, вода, соль и время.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17' stroke='%23BC3B1D' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600&family=PT+Mono&display=swap" rel="stylesheet">
+  <script>document.documentElement.className = 'js';</script>
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.loader{display:none!important}[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+  <!-- SVG-СПРАВОЧНИК -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-asterisk" viewBox="0 0 24 24">
+      <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M12 2.5v19M3.6 7.25l16.8 9.5M20.4 7.25L3.6 16.75"/>
+      </g>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M4 12h16M14 6l6 6-6 6"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ПРОЛОГ: ПЕЧЬ НАГРЕВАЕТСЯ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__brand">Хлебное Место</span>
+      <span class="loader__temp"><b id="loaderTemp">18</b><i>°C</i></span>
+      <span class="loader__line"><i id="loaderBar"></i></span>
+      <span class="loader__note">печь нагревается до 240</span>
+    </div>
+  </div>
+
+  <!-- ЗАВОДСКАЯ СТРЕЛКА: БУМАЖНЫЙ ШУМ + КУРСОР + ПРОГРЕСС -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <span class="sidetext" aria-hidden="true">СВЕЖЕЕ&nbsp;·&nbsp;КАЖДОЕ&nbsp;·&nbsp;УТРО&nbsp;·&nbsp;С&nbsp;1998&nbsp;·</span>
+
+  <!-- ХЕДЕР -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" data-hover>
+        <svg class="logo__mark"><use href="#i-asterisk"/></svg>
+        <span class="logo__text">Хлебное&nbsp;Место</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <ol class="nav__list">
+          <li><a href="#hero" class="nav__link" data-hover><sup>01</sup>Пекарня</a></li>
+          <li><a href="#night" class="nav__link" data-hover><sup>02</sup>Ночь</a></li>
+          <li><a href="#menu" class="nav__link" data-hover><sup>03</sup>Прейскурант</a></li>
+          <li><a href="#reviews" class="nav__link" data-hover><sup>04</sup>Отзывы</a></li>
+          <li><a href="#contact" class="nav__link" data-hover><sup>05</sup>Контакты</a></li>
+        </ol>
+        <div class="nav__foot">
+          <span>+7 (495) 123-45-67</span>
+          <span>ежедневно 07:00–21:00</span>
+        </div>
+      </nav>
+
+      <div class="header__right">
+        <span class="status" id="statusChip"><i class="status__dot"></i><span id="statusText">смена 07:00–21:00</span></span>
+        <a href="#contact" class="cta" data-hover>
+          Заказать
+          <span class="cta__count" id="ctaCount" hidden>0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ГЕРОЙ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="kicker" data-reveal>пекарня — москва — р-н пшеничная</p>
+          <h1 class="hero__title">
+            <span class="hero__line" data-reveal style="--rd:80ms">Мука, вода,</span>
+            <span class="hero__line" data-reveal style="--rd:180ms">соль <em>и время.</em></span>
+          </h1>
+          <p class="hero__sub" data-reveal style="--rd:300ms">
+            Замешиваем тесто в четыре утра, печём на берёзовых дровах
+            и не кладём ничего лишнего. Двадцать седьмой год.
+          </p>
+          <div class="hero__actions" data-reveal style="--rd:400ms">
+            <a href="#menu" class="btn" data-hover>Смотреть прейскурант <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
+            <a href="#night" class="btn btn--ghost" data-hover>Одна ночная смена</a>
+          </div>
+
+          <dl class="hero__stats" data-reveal style="--rd:500ms">
+            <div class="stat"><dt>лет у печи</dt><dd>27</dd></div>
+            <div class="stat"><dt>позиций в продаже</dt><dd>40</dd></div>
+            <div class="stat"><dt>начало смены</dt><dd>04:00</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__side">
+          <div class="stamp" data-reveal style="--rd:350ms" aria-hidden="true">
+            <svg class="stamp__svg" viewBox="0 0 200 200">
+              <defs>
+                <path id="stampCircle" d="M100 100 m -74 0 a 74 74 0 1 1 148 0 a 74 74 0 1 1 -148 0"/>
+              </defs>
+              <text class="stamp__text">
+                <textPath href="#stampCircle">СВЕЖИЙ ХЛЕБ · КАЖДОЕ УТРО · С 1998 ГОДА ·</textPath>
+              </text>
+            </svg>
+            <svg class="stamp__center"><use href="#i-asterisk"/></svg>
+          </div>
+
+          <div class="slip" data-reveal style="--rd:500ms">
+            <i class="slip__tape slip__tape--l" aria-hidden="true"></i>
+            <i class="slip__tape slip__tape--r" aria-hidden="true"></i>
+            <p class="slip__head">на сегодня запланировано</p>
+            <div class="slip__row"><span>бородинский</span><i></i><span>×12</span></div>
+            <div class="slip__row"><span>багет французский</span><i></i><span>×30</span></div>
+            <div class="slip__row"><span>круассан классик</span><i></i><span>×24</span></div>
+            <div class="slip__row"><span>медовик</span><i></i><span>×4</span></div>
+            <p class="slip__foot">первая партия — в 06:55</p>
+            <span class="slip__stamp">горячее<br>06:55</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЕГУЩАЯ СТРОКА -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <span class="ticker__half">
+          СЕГОДНЯ В ПРОДАЖЕ /// БОРОДИНСКИЙ /// БАГЕТ ФРАНЦУЗСКИЙ /// КРУАССАН КЛАССИК /// МЕДОВИК /// БУБЛИК С МАКОМ /// КРЕНДЕЛЬ БАВАРСКИЙ /// ПИРОЖКИ С ВИШНЕЙ /// КАПКЕЙК ВАНИЛЬНЫЙ /// ПОНЧИК ШОКОЛАДНЫЙ ///
+        </span>
+        <span class="ticker__half">
+          СЕГОДНЯ В ПРОДАЖЕ /// БОРОДИНСКИЙ /// БАГЕТ ФРАНЦУЗСКИЙ /// КРУАССАН КЛАССИК /// МЕДОВИК /// БУБЛИК С МАКОМ /// КРЕНДЕЛЬ БАВАРСКИЙ /// ПИРОЖКИ С ВИШНЕЙ /// КАПКЕЙК ВАНИЛЬНЫЙ /// ПОНЧИК ШОКОЛАДНЫЙ ///
+        </span>
+      </div>
+    </div>
+
+    <!-- МАНИФЕСТ -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="about__content">
+          <p class="label" data-reveal>( 01 ) — манифест</p>
+          <h2 class="about__title" data-reveal style="--rd:100ms">
+            Мы до сих пор печём, <em>как в 1998-м.</em>
+          </h2>
+          <p class="about__text" data-reveal style="--rd:200ms">
+            Семейная пекарня в центре города. Пять человек в смене, две печи
+            и одна закваска, которой больше двадцати лет. Мы не растём быстро —
+            мы печём стабильно.
+          </p>
+
+          <ul class="index" data-reveal style="--rd:300ms">
+            <li class="index__row" data-hover>
+              <span class="index__num">01</span>
+              <div><strong>Закваска</strong><p>живая, старше половины команды</p></div>
+            </li>
+            <li class="index__row" data-hover>
+              <span class="index__num">02</span>
+              <div><strong>Печь</strong><p>дровяная, берёзовые дрова, 240°</p></div>
+            </li>
+            <li class="index__row" data-hover>
+              <span class="index__num">03</span>
+              <div><strong>Состав</strong><p>мука, вода, соль. больше — ничего</p></div>
+            </li>
+            <li class="index__row" data-hover>
+              <span class="index__num">04</span>
+              <div><strong>Доставка</strong><p>60 минут по городу, пока тёплый</p></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about__aside" data-reveal style="--rd:200ms">
+          <span class="about__num" aria-hidden="true">27</span>
+          <p class="about__caption">лет у печи —<br>без выходных и рекламы</p>
+          <svg class="about__mark" aria-hidden="true"><use href="#i-asterisk"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- НОЧНАЯ СМЕНА -->
+    <section class="night" id="night">
+      <div class="container night__inner">
+        <div class="night__left">
+          <div class="night__sticky">
+            <p class="label label--dark" data-reveal>( 02 ) — одна ночная смена</p>
+            <h2 class="night__title" data-reveal style="--rd:100ms">Пока город спит, <em>печь не спит</em></h2>
+            <p class="night__text" data-reveal style="--rd:200ms">
+              Каждую ночь, круглый год, в пекарне горит свет.
+              Мы провели там одну смену и записали всё по минутам.
+            </p>
+            <p class="night__meta" data-reveal style="--rd:300ms">03:45 → 07:00 · КРУГЛЫЙ ГОД</p>
+          </div>
+        </div>
+
+        <div class="steps" id="steps">
+          <i class="steps__rail" aria-hidden="true"><b id="stepsFill"></b></i>
+          <ol class="steps__list">
+          <li class="step">
+            <span class="step__time">03:45</span>
+            <div class="step__body">
+              <h3>Закваска просыпается</h3>
+              <p>Ей двадцать семь лет. Подкармливаем мукой и теплом — раньше, чем кофе.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__time">04:30</span>
+            <div class="step__body">
+              <h3>Тесто — только руками</h3>
+              <p>Партии по двадцать килограммов. Руки помнят рецепт лучше, чем блокнот.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__time">06:15</span>
+            <div class="step__body">
+              <h3>Дровяная печь</h3>
+              <p>240 градусов, берёзовые дрова. Корочка звенит — это хороший знак.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__time">06:55</span>
+            <div class="step__body">
+              <h3>Горячий лоток</h3>
+              <p>Первая партия попадает на витрину. Ещё шипит.</p>
+            </div>
+          </li>
+          <li class="step step--last">
+            <span class="step__time">07:00</span>
+            <div class="step__body">
+              <h3>Двери открыты</h3>
+              <p>Запах выходит на улицу и делает половину нашей рекламы.</p>
+            </div>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРЕЙСКУРАНТ -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="menu__head">
+          <p class="label" data-reveal>( 03 ) — прейскурантъ</p>
+          <h2 class="menu__title" data-reveal style="--rd:100ms">Цены — как в старом городе: <em>без сюрпризов.</em></h2>
+        </div>
+
+        <div class="tabs" id="filters" data-reveal style="--rd:150ms">
+          <button class="tab is-active" data-filter="all" data-hover>всё</button>
+          <button class="tab" data-filter="bread" data-hover>хлеб</button>
+          <button class="tab" data-filter="pastry" data-hover>выпечка</button>
+          <button class="tab" data-filter="sweet" data-hover>сладости</button>
+        </div>
+
+        <div class="rows" id="menuGrid"></div>
+        <p class="menu__note">выпекаем малыми партиями — к вечеру кое-что кончается, мы не извиняемся</p>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <p class="label label--center" data-reveal>( 04 ) — говорят гости</p>
+
+        <div class="quote" id="quote" data-reveal style="--rd:100ms">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote class="quote__text" id="quoteText">Лучший бородинский в городе.</blockquote>
+          <footer class="quote__foot">
+            <strong id="quoteAuthor">—</strong>
+            <span id="quoteRole">—</span>
+          </footer>
+        </div>
+
+        <div class="quote__nav" data-reveal style="--rd:200ms">
+          <button class="quote__btn" id="qPrev" aria-label="Предыдущий отзыв" data-hover>
+            <svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg>
+          </button>
+          <span class="quote__counter"><b id="quoteCounter">01</b> / 03</span>
+          <button class="quote__btn" id="qNext" aria-label="Следующий отзыв" data-hover>
+            <svg><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__info">
+          <p class="label" data-reveal>( 05 ) — контакты</p>
+          <h2 class="contact__title" data-reveal style="--rd:100ms">Приходите <em>на запах.</em></h2>
+          <p class="contact__text" data-reveal style="--rd:200ms">
+            От печи до двери — четыре минуты. Работаем каждый день,
+            горячие партии — в 07:00 и в 13:00.
+          </p>
+
+          <ul class="info" data-reveal style="--rd:300ms">
+            <li class="info__row"><span class="info__key">адрес</span><span class="info__val">ул. Пшеничная, 15, Москва</span></li>
+            <li class="info__row"><span class="info__key">телефон</span><span class="info__val"><a href="tel:+74951234567" data-hover>+7 (495) 123-45-67</a></span></li>
+            <li class="info__row"><span class="info__key">почта</span><span class="info__val"><a href="mailto:hi@hlebnoemesto.ru" data-hover>hi@hlebnoemesto.ru</a></span></li>
+            <li class="info__row"><span class="info__key">часы</span><span class="info__val">ежедневно 07:00–21:00</span></li>
+          </ul>
+        </div>
+
+        <form class="blank" id="orderForm" novalidate data-reveal style="--rd:200ms">
+          <span class="stamp-badge" id="stampBadge" aria-hidden="true">
+            <b>принято</b>
+            <span id="stampName">спасибо</span>
+          </span>
+
+          <header class="blank__head">
+            <span>бланк заказа</span>
+            <span>№ <b id="blankNum">0000</b></span>
+          </header>
+
+          <label class="field">
+            <span>ваше имя</span>
+            <input type="text" name="name" placeholder="Иван Иванов" autocomplete="name" required minlength="2">
+          </label>
+
+          <label class="field">
+            <span>телефон</span>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+          </label>
+
+          <label class="field">
+            <span>что хотите заказать</span>
+            <textarea name="message" rows="3" placeholder="Например: 2 бородинских и 6 круассанов"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--full" data-hover>
+            Отправить заявку
+            <svg class="btn__icon"><use href="#i-arrow"/></svg>
+          </button>
+
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__giant" aria-hidden="true">Хлебное Место</p>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <svg class="footer__mark"><use href="#i-asterisk"/></svg>
+          <p>Дровяная пекарня<br>в центре Москвы</p>
+        </div>
+        <div class="footer__col">
+          <h4>Навигация</h4>
+          <a href="#about" data-hover>О пекарне</a>
+          <a href="#night" data-hover>Ночная смена</a>
+          <a href="#menu" data-hover>Прейскурант</a>
+          <a href="#contact" data-hover>Заказать</a>
+        </div>
+        <div class="footer__col">
+          <h4>Связь</h4>
+          <a href="tel:+74951234567" data-hover>+7 (495) 123-45-67</a>
+          <a href="mailto:hi@hlebnoemesto.ru" data-hover>hi@hlebnoemesto.ru</a>
+          <span>ул. Пшеничная, 15</span>
+        </div>
+        <div class="footer__col">
+          <h4>Сеть</h4>
+          <div class="footer__socials">
+            <a href="#" aria-label="Telegram" data-hover>TG</a>
+            <a href="#" aria-label="VK" data-hover>VK</a>
+            <a href="#" aria-label="Instagram" data-hover>IG</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <span>© <b id="yearNow">2026</b> пекарня «Хлебное Место»</span>
+        <span>демо-сайт: бэкенда нет — печь настоящая</span>
+        <a href="#hero" data-hover>наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
