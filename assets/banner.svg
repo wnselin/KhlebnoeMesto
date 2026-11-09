@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" role="img" aria-label="Хлебное Место — дровяная пекарня">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <path id="circle" d="M0 0 m -74 0 a 74 74 0 1 1 148 0 a 74 74 0 1 1 -148 0"/>
+  </defs>
+
+  <style>
+    .serif { font-family: Georgia, 'Times New Roman', serif; font-weight: bold; }
+    .mono  { font-family: 'Courier New', monospace; }
+  </style>
+
+  <!-- бумага -->
+  <rect width="1500" height="500" fill="#f1e7d3"/>
+  <rect width="1500" height="500" filter="url(#grain)" opacity="0.05"/>
+
+  <!-- рамки -->
+  <rect x="28" y="28" width="1444" height="444" fill="none" stroke="#26180e" stroke-width="2"/>
+  <rect x="42" y="42" width="1416" height="416" fill="none" stroke="#26180e" stroke-width="1" opacity="0.35"/>
+
+  <!-- шапка -->
+  <text x="72" y="92" class="mono" font-size="15" letter-spacing="4" fill="#6a5645">ПЕКАРНЯ — МОСКВА</text>
+  <text x="1428" y="92" class="mono" font-size="15" letter-spacing="4" fill="#6a5645" text-anchor="end">( ОСН. 1998 )</text>
+
+  <!-- звёздочка-разделитель слева -->
+  <g transform="translate(96,250) scale(1.6)" stroke="#bc3b1d" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M12 2.5v19M3.6 7.25l16.8 9.5M20.4 7.25L3.6 16.75"/>
+  </g>
+
+  <!-- заголовок -->
+  <text x="800" y="272" class="serif" font-size="112" fill="#26180e" text-anchor="middle">Хлебное Место</text>
+
+  <text x="800" y="332" class="mono" font-size="19" letter-spacing="10" fill="#6a5645" text-anchor="middle">МУКА · ВОДА · СОЛЬ · ВРЕМЯ</text>
+
+  <text x="800" y="372" class="mono" font-size="14" letter-spacing="4" fill="#bc3b1d" text-anchor="middle">ИЗ ДРОВЯНОЙ ПЕЧИ — КАЖДОЕ УТРО, С 1998 ГОДА</text>
+
+  <!-- звёздочка-разделитель справа -->
+  <g transform="translate(1404,250) scale(1.6)" stroke="#bc3b1d" stroke-width="2.4" stroke-linecap="round" fill="none">
+    <path d="M12 2.5v19M3.6 7.25l16.8 9.5M20.4 7.25L3.6 16.75"/>
+  </g>
+
+  <!-- архивная строка слева внизу -->
+  <text x="72" y="436" class="mono" font-size="13" letter-spacing="2" fill="#26180e">01 БОРОДИНСКИЙ</text>
+  <line x1="268" y1="431" x2="404" y2="431" stroke="#26180e" stroke-width="2" stroke-dasharray="2 5" opacity="0.4"/>
+  <text x="416" y="436" class="mono" font-size="13" letter-spacing="2" fill="#26180e">120 ₽</text>
+
+  <!-- архивная строка справа внизу -->
+  <text x="1084" y="436" class="mono" font-size="13" letter-spacing="2" fill="#26180e" text-anchor="start">02 КРУАССАН</text>
+  <line x1="1256" y1="431" x2="1332" y2="431" stroke="#26180e" stroke-width="2" stroke-dasharray="2 5" opacity="0.4"/>
+  <text x="1344" y="436" class="mono" font-size="13" letter-spacing="2" fill="#26180e">180 ₽</text>
+</svg>
